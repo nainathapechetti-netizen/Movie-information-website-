@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MusicWave - Music Streaming</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #121212;
+    color: white;
+}
+
+/* Header */
+header {
+    background: #080808;
+    padding: 20px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #1db954;
+    font-size: 28px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    color: #1db954;
+}
+
+/* Hero */
+.hero {
+    padding: 60px 6%;
+    background: linear-gradient(120deg, #202020, #173d32);
+}
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #1db954;
+    color: black;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* Sections */
+section {
+    padding: 35px 6%;
+}
+
+.section-title {
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+/* Cards */
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: #202020;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    background: #303030;
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* Recently Played */
+.song-list {
+    background: #202020;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.song {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #383838;
+}
+
+.song:last-child {
+    border-bottom: none;
+}
+
+.song span {
+    color: #aaa;
+}
+
+/* Music Player */
+.player {
+    background: #252525;
+    padding: 18px 6%;
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.player-info h3 {
+    color: #1db954;
+}
+
+.controls {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.controls button {
+    background: #1db954;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.progress {
+    width: 25%;
+}
+
+/* Footer */
+footer {
+    background: #080808;
+    padding: 25px;
+    text-align: center;
+    color: #aaa;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 0 7px;
+        font-size: 13px;
+    }
+
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .player {
+        flex-wrap: wrap;
+    }
+
+    .progress {
+        width: 100%;
+    }
+}
+
+@media(max-width: 450px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+    <h1 class="logo">🎵 MusicWave</h1>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#artists">Artists</a>
+        <a href="#albums">Albums</a>
+        <a href="#playlists">Playlists</a>
+    </nav>
+</header>
+
+<!-- Home -->
+<div class="hero" id="home">
+    <h1>Feel Every Beat 🎧</h1>
+    <p>Discover your favorite songs, artists and albums in one place.</p>
+    <a href="#popular" class="btn">Explore Music</a>
+</div>
+
+<!-- Artists -->
+<section id="artists">
+    <h2 class="section-title">Popular Artists</h2>
+
+    <div class="container">
+        <div class="card">
+            <img src="https://placehold.co/300x200/333333/ffffff?text=Artist+1" alt="Artist">
+            <h3>Arijit Singh</h3>
+            <p>Indian Singer</p>
+        </div>
+
+        <div class="card">
+            <img src="https://placehold.co/300x200/333333/ffffff?text=Artist+2" alt="Artist">
+            <h3>Sid Sriram</h3>
+            <p>Playback Singer</p>
+        </div>
+
+        <div class="card">
+            <img src="https://placehold.co/300x200/333333/ffffff?text=Artist+3" alt="Artist">
+            <h3>Shreya Ghoshal</h3>
+            <p>Indian Singer</p>
+        </div>
+
+        <div class="card">
+            <img src="https://placehold.co/300x200/333333/ffffff?text=Artist+4" alt="Artist">
+            <h3>Anirudh</h3>
+            <p>Music Composer</p>
+        </div>
+    </div>
+</section>
+
+<!-- Albums -->
+<section id="albums">
+    <h2 class="section-title">Popular Albums</h2>
+
+    <div class="container">
+        <div class="card">
+            <img src="https://placehold.co/300x200/173d32/ffffff?text=Album+1" alt="Album">
+            <h3>Love Hits</h3>
+            <p>Romantic Collection</p>
+        </div>
+
+        <div class="card">
+            <img src="https://placehold.co/300x200/173d32/ffffff?text=Album+2" alt="Album">
+            <h3>Melody Songs</h3>
+            <p>Beautiful Melodies</p>
+        </div>
+
+        <div class="card">
+            <img src="https://placehold.co/300x200/173d32/ffffff?text=Album+3" alt="Album">
+            <h3>Party Beats</h3>
+            <p>Dance Collection</p>
+        </div>
+
+        <div class="card">
+            <img src="https://placehold.co/300x200/173d32/ffffff?text=Album+4" alt="Album">
+            <h3>Trending Hits</h3>
+            <p>Latest Collection</p>
+        </div>
+    </div>
+</section>
+
+<!-- Playlists -->
+<section id="playlists">
+    <h2 class="section-title">Your Playlists</h2>
+
+    <div class="container">
+        <div class="card">
+            <img src="https://placehold.co/300x200/642b45/ffffff?text=Romantic" alt="Romantic">
+            <h3>Romantic Songs ❤️</h3>
+            <p>Relax with love melodies</p>
+        </div>
+
+        <div class="card">
+            <img src="https://placehold.co/300x200/253d65/ffffff?text=Party" alt="Party">
+            <h3>Party Songs 🔥</h3>
+            <p>Feel the energy</p>
+        </div>
+
+        <div class="card">
+            <img src="https://placehold.co/300x200/57432a/ffffff?text=Sad+Songs" alt="Sad songs">
+            <h3>Sad Songs 💔</h3>
+            <p>Emotional music</p>
+        </div>
+
+        <div class="card">
+            <img src="https://placehold.co/300x200/235044/ffffff?text=Telugu+Hits" alt="Telugu hits">
+            <h3>Telugu Hits 🎶</h3>
+            <p>Best Telugu collection</p>
+        </div>
+    </div>
+</section>
+
+<!-- Recently Played -->
+<section>
+    <h2 class="section-title">Recently Played</h2>
+
+    <div class="song-list">
+        <div class="song">
+            <h3>🎵 Samajavaragamana</h3>
+            <span>Sid Sriram</span>
+        </div>
+
+        <div class="song">
+            <h3>🎵 Kesariya</h3>
+            <span>Arijit Singh</span>
+        </div>
+
+        <div class="song">
+            <h3>🎵 Butta Bomma</h3>
+            <span>Armaan Malik</span>
+        </div>
+    </div>
+</section>
+
+<!-- Popular Tracks -->
+<section id="popular">
+    <h2 class="section-title">Popular Tracks 🔥</h2>
+
+    <div class="song-list">
+        <div class="song">
+            <h3>🎧 Naatu Naatu</h3>
+            <span>3:28</span>
+        </div>
+
+        <div class="song">
+            <h3>🎧 Inkem Inkem Inkem Kaavaale</h3>
+            <span>4:26</span>
+        </div>
+
+        <div class="song">
+            <h3>🎧 Srivalli</h3>
+            <span>3:44</span>
+        </div>
+
+        <div class="song">
+            <h3>🎧 Heeriye</h3>
+            <span>3:19</span>
+        </div>
+    </div>
+</section>
+
+<!-- Music Player -->
+<div class="player">
+    <div class="player-info">
+        <h3>🎵 MusicWave Player</h3>
+        <p>Now Playing - Select a song</p>
+    </div>
+
+    <div class="controls">
+        <button>⏮</button>
+        <button>▶</button>
+        <button>⏭</button>
+    </div>
+
+    <input type="range" class="progress" min="0" max="100" value="30">
+</div>
+
+<!-- Footer -->
+<footer>
+    <h2>MusicWave 🎵</h2>
+    <p>Feel Every Beat. Enjoy Every Moment.</p>
+    <p>© 2026 MusicWave. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
